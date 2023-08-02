@@ -1,0 +1,56 @@
+exp_path = "/home/star/Develop/ActiveRecon/exp/toycar3"
+
+# Data params
+device = 0
+
+# For gazebo
+fx = 448.10089111328125
+fy = 448.10089111328125
+cx = 376.0
+cy = 240.0
+width = 752
+height = 480
+
+
+downsample_rate = 1
+obj_size_guess = 0.4
+max_depth_range = 1
+
+method = 0
+disturb_pose = 0
+
+# Train params
+global_pose_lr = 1e-2
+network_lr = 2e-3
+depth_loss_lambda = 2
+
+rays_per_img_recon = 4000
+recon_step = 200
+
+sigma = 0.005
+surf_points = 16
+strat_points = 16
+
+active_kf_size = 5
+frame_buffer_len = 48
+pixel_buffer_portion = 0.2
+
+# Planner params
+linear_max = 2
+
+# Eval params
+mesh_chunk = 3194302
+mesh_reso = 512
+surf_thresh = 0.5
+
+vis_iter_step = 100
+vis_step = 10
+save_vis = 0
+
+# Train options
+hash = False
+pose_opt = False
+
+# Eval options
+verbose = False
+

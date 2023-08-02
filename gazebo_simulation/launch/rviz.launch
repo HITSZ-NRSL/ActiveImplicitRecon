@@ -1,0 +1,3 @@
+<launch>
+    <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find active_recon_gazebo)/config.rviz" />
+</launch>

@@ -1,0 +1,30 @@
+<launch>
+
+  <!-- Model setup -->
+  <arg name="model" default="$(find active_recon_gazebo)/xacro/d435.xacro" />
+  <!-- spawn urdf model to gazebo -->
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-x -0.6 -z 0.35 -R 1.570796 -unpause -urdf -model d435_model -param robot_description" respawn="false" output="screen" />
+
+  <!-- simulator -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find active_recon_gazebo)/model/dragon/dragon_world.sdf" />
+    <arg name="gui" value="true" />
+  </include>
+
+
+  <!-- state publishers -->
+  <!-- tf -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- depthcam.xacro is modified to align color and depth -->
+  <!-- align depth and color -->
+  <!-- <node pkg="nodelet" type="nodelet" name="standalone_nodelet" args="manager" output="screen" />
+  <node pkg="nodelet" type="nodelet" name="register_depth" args="load depth_image_proc/register standalone_nodelet" output="screen" respawn="false">
+    <remap from="/rgb/camera_info" to="/d435/color/camera_info" />
+    <remap from="/depth/camera_info" to="/d435/depth/camera_info" />
+    <remap from="/depth/image_rect" to="/d435/depth/image_raw" />
+  </node> -->
+
+</launch>

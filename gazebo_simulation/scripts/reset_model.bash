@@ -1,0 +1,1 @@
+rosservice call /gazebo/set_model_state '{model_state: { model_name: d435_model, pose: { position: { x: -0.6 , y: 0.0 , z: 0.35 }, orientation: {x: -0.70710678, y: 0, z: 0, w: -0.70710678 } }, twist: { linear: {x: 0.0, y: 0.0, z: 0.0 } , angular: { x: 0.0, y: 0.0, z: 0.0 } } , reference_frame: world } }'
