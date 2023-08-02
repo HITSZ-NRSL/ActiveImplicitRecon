@@ -1,8 +1,9 @@
 # ActiveImplicitRecon
 
-# Active Implicit Object Reconstruction using Uncertainty-guided Next-Best-View Optimization
-
 ## 1. Introduction
+
+**Active Implicit Object Reconstruction using Uncertainty-guided Next-Best-View Optimization**
+
 In this work, we propose a seamless integration of the emerging implicit representation with the active reconstruction task.
 We build an implicit occupancy field as our geometry proxy.
 While training, the prior object bounding box is utilized as auxiliary information to generate clean and detailed reconstructions.
@@ -12,8 +13,9 @@ Unlike previous methods that compare view uncertainty within a finite set of can
 Leveraging the differentiability of the implicit representation, the NBV can be optimized directly by maximizing the view uncertainty using gradient descent.
 It significantly enhances the method's adaptability to different scenarios.
 
-Authors: [Dongyu Yan](https://github.com/StarRealMan)\*, [Jianheng Liu](https://github.com/jianhengLiu)\*, [Fengyu Quan](https://github.com/jianhengLiu), [Haoyao Chen](https://github.com/HitszChen), and Mengmeng Fu.
-\* Equal contribution.
+**Authors:** [Dongyu Yan](https://github.com/StarRealMan)\*, [Jianheng Liu](https://github.com/jianhengLiu)\*, [Fengyu Quan](https://github.com/jianhengLiu), [Haoyao Chen](https://github.com/HitszChen), and Mengmeng Fu.
+
+*\* Equal contribution.*
 
 
 If you use ActiveImplicitRecon for your academic research, please cite the following paper [[pdf](https://arxiv.org/abs/2303.16739)]. 
@@ -26,9 +28,9 @@ If you use ActiveImplicitRecon for your academic research, please cite the follo
 }
 ```
 
-# 2. Usage
+## 2. Usage
 
-## Prerequisites
+### 2.1. Prerequisites
 
 1. clone repo
     ```bash
@@ -55,31 +57,31 @@ If you use ActiveImplicitRecon for your academic research, please cite the follo
 
 4. Install tiny-cuda-nn and apex following the instructions in [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) and [apex](https://github.com/NVIDIA/apex)
 
-## Simulation
+### 2.2. Simulation
 
 1. start simulation
-```bash
-export GAZEBO_MODEL_PATH=(path_to_repo)/ActiveImplicitRecon/gazebo_simulation/model:$GAZEBO_MODEL_PATH
+    ```bash
+    export GAZEBO_MODEL_PATH=(path_to_repo)/ActiveImplicitRecon/gazebo_simulation/model:$GAZEBO_MODEL_PATH
 
-roslaunch active_recon_gazebo simulation_bunny.launch
-```
+    roslaunch active_recon_gazebo simulation_bunny.launch
+    ```
 2. visualization
 
-```bash
-roslaunch active_recon_gazebo rviz.launch
-```
+    ```bash
+    roslaunch active_recon_gazebo rviz.launch
+    ```
 
 3. (optional) reset simulation
-```bash
-sh src/active_recon_gazebo/scripts/reset_model.bash
-```
+    ```bash
+    sh src/active_recon_gazebo/scripts/reset_model.bash
+    ```
 
 
-## ActiveImplicitRecon
+### 2.3. ActiveImplicitRecon
 ```bash
 python main.py --hash --config config/gazebo.txt --exp_path active_recon/exp/test 
 ```
-- different methods:
+- different methods: --method 0
   
   0. (default) ours sample_seed+end2end
   1. end2end
@@ -89,11 +91,11 @@ python main.py --hash --config config/gazebo.txt --exp_path active_recon/exp/tes
   5. circular
   6. new sample_seed+end2end
 
-- mode:
+- mode: --method 0
   
-  0. (default) offline
-  1. simulation
-  2. realworld
+  0. (default) simulation
+  1. realworld
+  2. offline
 
 
 - pose opt: --pose_opt
@@ -102,7 +104,7 @@ python main.py --hash --config config/gazebo.txt --exp_path active_recon/exp/tes
 
 for more options, please refer to config/gazebo.txt
 
-# Evaluation
+### 2.4. Evaluation
 
 1. surface coverage and entropy evaluation
     ```bash
