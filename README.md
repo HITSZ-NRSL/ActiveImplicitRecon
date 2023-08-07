@@ -13,12 +13,13 @@ Unlike previous methods that compare view uncertainty within a finite set of can
 Leveraging the differentiability of the implicit representation, the NBV can be optimized directly by maximizing the view uncertainty using gradient descent.
 It significantly enhances the method's adaptability to different scenarios.
 
+[[PDF](https://arxiv.org/abs/2303.16739)], [[YouTube](https://youtu.be/qKmFzIE4-C0)], [[Bilibili](https://www.bilibili.com/video/BV13z4y1s71y/?share_source=copy_web&vd_source=98e0b0102bbc355156eba6f968dc7cfb)]
+
 **Authors:** [Dongyu Yan](https://github.com/StarRealMan)\*, [Jianheng Liu](https://github.com/jianhengLiu)\*, [Fengyu Quan](https://github.com/jianhengLiu), [Haoyao Chen](https://github.com/HitszChen), and Mengmeng Fu.
 
 *\* Equal contribution.*
 
-
-If you use ActiveImplicitRecon for your academic research, please cite the following paper [[pdf](https://arxiv.org/abs/2303.16739)]. 
+If you use ActiveImplicitRecon for your academic research, please cite the following paper. 
 ```
 @article{yan2023active,
   title={Active Implicit Object Reconstruction using Uncertainty-guided Next-Best-View Optimziation},
