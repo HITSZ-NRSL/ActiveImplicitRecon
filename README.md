@@ -21,12 +21,15 @@ It significantly enhances the method's adaptability to different scenarios.
 
 If you use ActiveImplicitRecon for your academic research, please cite the following paper. 
 ```
-@article{yan2023active,
-  title={Active Implicit Object Reconstruction using Uncertainty-guided Next-Best-View Optimziation},
+@ARTICLE{10223307,
   author={Yan, Dongyu and Liu, Jianheng and Quan, Fengyu and Chen, Haoyao and Fu, Mengmeng},
-  journal={arXiv preprint arXiv:2303.16739},
-  year={2023}
-}
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Active Implicit Object Reconstruction using Uncertainty-guided Next-Best-View Optimization}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-8},
+  doi={10.1109/LRA.2023.3306282}}
 ```
 
 ## 2. Usage
